@@ -80,6 +80,16 @@
 
 本书代码可在GitHub上的[https://github.com/wubin28/rust_for_beginners](https://github.com/wubin28/rust_for_beginners)代码库中下载。每个代码清单都标注了其在代码库中的具体位置，方便读者查找和运行。代码库按章节组织，格式为chxx（xx为章节编号）。
 
+## 开发环境准备
+
+要运行本书代码，需要以下设备：一台个人计算机、一块 micro:bit v2 开发板，以及一根用于连接计算机与开发板的 USB micro 线缆。
+
+此外，计算机上需要安装以下软件（详细安装说明请参见附录1）：
+
+- Git
+- Rust
+- Visual Studio Code（VS Code）
+
 ## 常见问题
 
 ### 1. 这本书适合编程小白吗？
