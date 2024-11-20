@@ -84,17 +84,16 @@ You can download the code for this book from the GitHub repository at [https://g
 ## Development Environment Setup
 
 To run the code in this book, you'll need the following equipment:
-• A personal computer running Linux, macOS, or Windows 11 (Ubuntu is recommended for the best embedded development experience)
-• A micro:bit v2 development board
-• A USB micro data cable to connect the computer to the development board
+
+- A personal computer running Linux, macOS, or Windows 11 (Ubuntu is recommended for the best embedded development experience)
+- A micro:bit v2 development board
+- A USB micro data cable to connect the computer to the development board
 
 Additionally, install the following software on your computer (detailed installation instructions are in Chapter 1):
 
-• Git
-
-• Rust
-
-• Visual Studio Code (VS Code)
+- Git
+- Rust
+- Visual Studio Code (VS Code)
 
 ## Acknowledgements
 

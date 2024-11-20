@@ -84,15 +84,17 @@
 
 ## 开发环境准备
 
-要运行本书代码，您需要以下设备：一台安装了Linux、macOS或Windows 11的个人电脑（如果想获得更好的嵌入式开发体验，本书推荐使用Ubuntu）、一块micro:bit v2开发板，以及一根用于连接电脑和开发板的USB micro数据线。
+要运行本书代码，您需要以下设备：
+
+- 一台安装了Linux、macOS或Windows 11的个人电脑（如果想获得更好的嵌入式开发体验，本书推荐使用Ubuntu）
+- 一块micro:bit v2开发板
+- 一根用于连接电脑和开发板的USB micro数据线。
 
 此外，计算机上需要安装以下软件（详细安装说明请参见第1章）：
 
-• Git
-
-• Rust
-
-• Visual Studio Code（VS Code）
+- Git
+- Rust
+- Visual Studio Code（VS Code）
 
 ## 致谢
 
