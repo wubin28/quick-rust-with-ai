@@ -69,7 +69,7 @@
     ```
 
     ```sh
-    cd esp32c3/bwifi
+    cd bwifi
     cargo build
     cargo run
     ```

@@ -24,15 +24,15 @@ jobs:
           - name: "i2c-sensor-reading"
             path: "advanced/i2c-sensor-reading"
           - name: "bwifi"
-            path: "esp32c3/bwifi"
+            path: "bwifi"
           - name: "http-client"
-            path: "esp32c3/http-client"
+            path: "http-client"
           - name: "http-server"
-            path: "esp32c3/http-server"
+            path: "http-server"
           - name: "mqtt"
-            path: "esp32c3/mqtt/exercise"
+            path: "mqtt/exercise"
           - name: "mqtt - host client"
-            path: "esp32c3/mqtt/host-client"
+            path: "mqtt/host-client"
     steps:
       - name: Checkout the repository
         uses: actions/checkout@v4

@@ -8,4 +8,3 @@ __pycache__
 .embuild/
 .vale
 .vale.ini
-components_esp32c3.lock
