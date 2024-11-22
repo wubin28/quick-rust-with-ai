@@ -24,8 +24,8 @@ The chapter titles in this book will be continuously refined and adjusted throug
 ### Part One: Lighting Up LEDs
 
 - Chapter 1: Why Should Beginners Learn Rust
-- Chapter 2: Lighting Up Your First LED
-- Chapter 3: LED Scrolling Text Display
+- Chapter 2: Make Your First LED Blink
+- Chapter 3: LED Text Scrolling Display
 - Chapter 4: Accidentally Changing Code and Automated Testing
 - Chapter 5: Memory Challenge Game and Variables
 - Chapter 6: Virtual Pet Game and Ownership
