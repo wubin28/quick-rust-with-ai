@@ -95,6 +95,15 @@ Additionally, install the following software on your computer (detailed installa
 - Rust
 - Visual Studio Code (VS Code)
 
+## Icons We Use
+
+Throughout this book, we use specific icons to highlight different types of information:
+
+- ✅ Call to action
+- ⚠️ Warning or important detail that needs special attention
+- 🔎 Deep dive into a topic—optional but enriching knowledge
+- 💡 Helpful tips for exercises
+
 ## Acknowledgements
 
 I extend my gratitude to Ms. Hailing Yang, editor at People's Posts and Telecommunications Press. Her keen perception of Rust programming as a trending topic, professional annotations for the initial chapters, and suggestion to share the e-book version for reader feedback were instrumental in shaping this work. Her efforts were the catalyst for creating this e-book.
