@@ -102,6 +102,7 @@ Throughout this book, we use specific icons to highlight different types of info
 - ✅ Call to action
 - ⚠️ Warning or important detail that needs special attention
 - 🔎 Deep dive into a topic—optional but enriching knowledge
+- 🤔Exercises
 - 💡 Helpful tips for exercises
 
 ## Acknowledgements
