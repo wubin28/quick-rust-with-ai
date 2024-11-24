@@ -83,17 +83,20 @@ You can download the code for this book from the GitHub repository at [https://g
 
 ## Development Environment Setup
 
-To run the code in this book, you'll need the following equipment:
+To run the code in this book, you'll need the following devices and software based on your operating system:
 
-- A personal computer running Linux, macOS, or Windows 11 (Ubuntu is recommended for the best embedded development experience)
-- A micro:bit v2 development board
-- A USB micro data cable to connect the computer to the development board
+| **Your Computer's Operating System** | **Linux (Native or in WSL2 on Windows 10/11) or macOS** | **Windows 10/11** |
+| --- | --- | --- |
+| micro:bit v2 development board | 1 piece | 1 piece |
+| USB micro data cable | 1 piece | 1 piece |
+| Command line shell | zsh | Windows PowerShell |
+| Command line shell configuration framework | Oh My Zsh | Oh My Posh |
+| Git | Required | Required |
+| Rust | Required | Required |
+| Visual Studio Code (VS Code) or Cursor AI | Required | Required |
+| VS Code rust-analyzer extension | Required | Required |
 
-Additionally, install the following software on your computer (detailed installation instructions are in Chapter 1):
-
-- Git
-- Rust
-- Visual Studio Code (VS Code)
+Note: This book won't cover the setup of Linux in WSL2 on Windows 10/11 as it can be complex for beginners. For all other operating system configurations, please refer to Chapter 1.
 
 ## Icons We Use
 
