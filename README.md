@@ -29,7 +29,7 @@ The chapter titles will be refined and adjusted throughout the writing process.
 
 ### Part One: Lighting Up LEDs
 
-- Chapter 1: Why Should Beginners Learn Rust
+- Chapter 1: Light Up Your First LED
 - Chapter 2: Make Your First LED Blink
 - Chapter 3: LED Text Scrolling Display
 - Chapter 4: Accidentally Changing Code and Automated Testing
