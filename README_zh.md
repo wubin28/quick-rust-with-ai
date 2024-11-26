@@ -96,10 +96,7 @@
 | --- | --- | --- | --- |
 | micro:bit v2开发板 | 1块 | （同左） | （同左） |
 | USB micro数据线 | 1根 | （同左） | （同左） |
-| 命令行shell | bash | zsh（macOS Catalina 10.15及之后）
-bash（macOS Catalina 10.15之前） | Command Prompt (cmd) |
-| 文件管理工具 | Files | Finder | File Explorer |
-| Git | 需要 | （同左） | （同左） |
+| 命令行shell | bash | zsh（macOS Catalina 10.15及之后）; bash（macOS Catalina 10.15之前） | cmd (Command Prompt) |
 | Rust | 需要 | （同左） | （同左） |
 
 由于在Windows 10/11的WSL2中使用Linux对初学者来说较为复杂，本书暂不详述。其他操作系统的开发环境配置详见第1章。

@@ -95,10 +95,7 @@ To run the code in this book, please prepare the following devices and software 
 | --- | --- | --- | --- |
 | micro:bit v2 development board | 1 piece | (Same as left) | (Same as left) |
 | USB micro data cable | 1 piece | (Same as left) | (Same as left) |
-| Command line shell | bash | zsh (macOS Catalina 10.15 and later)
-bash (before macOS Catalina 10.15) | Command Prompt (cmd) |
-| File management tool | Files | Finder | File Explorer |
-| Git | Required | (Same as left) | (Same as left) |
+| Command line shell | bash | zsh (macOS Catalina 10.15 and later); bash (before macOS Catalina 10.15) | cmd (Command Prompt) |
 | Rust | Required | (Same as left) | (Same as left) |
 
 Note: This book won't cover the setup of Linux in WSL2 on Windows 10/11 as it can be complex for beginners. For all other operating system configurations, please refer to Chapter 1.
