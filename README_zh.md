@@ -90,18 +90,17 @@
 
 ## 开发环境准备
 
-要运行本书代码，请根据你的操作系统准备以下设备和软件：
+要运行本书代码，请根据你的计算机的操作系统准备以下设备和软件：
 
-| **你的计算机的操作系统** | **Linux（原生或在Windows 10/11的WSL2中使用）或macOS** | **Windows 10/11** |
-| --- | --- | --- |
-| micro:bit v2开发板 | 1块 | 1块 |
-| USB micro数据线 | 1根 | 1根 |
-| 命令行shell | zsh | Windows PowerShell |
-| 命令行shell配置框架 | Oh My Zsh | Oh My Posh |
-| Git | 需要 | 需要 |
-| Rust | 需要 | 需要 |
-| Visual Studio Code (VS Code) 或 Cursor AI | 需要 | 需要 |
-| VS Code的rust-analyzer插件 | 需要 | 需要 |
+| **你的计算机的操作系统** | **Linux（原生或在Windows 10/11的WSL2中使用）** | **macOS** | **Windows 10/11** |
+| --- | --- | --- | --- |
+| micro:bit v2开发板 | 1块 | （同左） | （同左） |
+| USB micro数据线 | 1根 | （同左） | （同左） |
+| 命令行shell | bash | zsh（macOS Catalina 10.15及之后）
+bash（macOS Catalina 10.15之前） | Command Prompt (cmd) |
+| 文件管理工具 | Files | Finder | File Explorer |
+| Git | 需要 | （同左） | （同左） |
+| Rust | 需要 | （同左） | （同左） |
 
 由于在Windows 10/11的WSL2中使用Linux对初学者来说较为复杂，本书暂不详述。其他操作系统的开发环境配置详见第1章。
 
