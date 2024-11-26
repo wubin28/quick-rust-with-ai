@@ -9,15 +9,21 @@ Author: Bin Wu
 
 ## Introduction
 
-"Learn Rust by Games: The No-Frills Edition" is a limited-share e-book under the CC BY-NC-ND 4.0 license. It offers a unique approach to learning Rust through game development—including embedded, web, and command-line games—while exploring common pitfalls and their solutions. Using game programming as a springboard, this book examines how professional programmers can leverage Rust for software development projects in the era of powerful generative AI. Throughout this journey, we uncover common traps and errors, making the learning experience more engaging, enjoyable, and motivating.
+"Learn Rust by Games: The No-Frills Edition" is a free limited-sharing ebook released under the CC BY-NC-ND 4.0 license. The book takes a unique approach to **teaching Rust by having readers create LED games, web games, and command-line games**. Throughout the learning process, we explore common programming pitfalls and their solutions. We also show how to leverage AI tools to assist with programming, making the learning journey both practical and engaging. Our goal is to help you master Rust while having fun.
 
-The "by games" aspect of the book's title highlights its suitability for two types of beginners: those with no programming experience at all, and those familiar with programming but new to embedded development. For beginners, games serve as ideal learning companions.
+The book is designed for two types of learners: complete programming beginners and experienced programmers who are new to embedded development.
 
-This book divides Rust fundamentals into three parts, each focusing on a specific type of game development. Each chapter's content revolves around the knowledge required to complete particular game projects. This structure offers a clear advantage: readers can quickly apply what they've learned, deepening their understanding of Rust.
+The content is divided into three parts—embedded, web, and command-line game development. Each chapter introduces specific Rust concepts through hands-on game projects. This practical approach allows readers to immediately apply what they've learned, reinforcing their understanding of Rust.
 
-**If you enjoy this e-book, please show your support with a star ⭐️!**
+What sets this book apart from other Rust programming guides is its focus on three key principles for beginners:
 
-The chapter titles in this book will be continuously refined and adjusted throughout the writing process.
+- **Learn and apply immediately**: Experience quick wins that boost confidence and motivation
+- **Make benefits visible**: See the practical value of each new concept and tool
+- **Ask AI good questions**: Learn effective techniques for getting helpful AI responses
+
+**If you like this ebook, please give it a star⭐️!**
+
+The chapter titles will be refined and adjusted throughout the writing process.
 
 ## Table of Contents
 
@@ -102,11 +108,11 @@ Note: This book won't cover the setup of Linux in WSL2 on Windows 10/11 as it ca
 
 Throughout this book, we use specific icons to highlight different types of information:
 
-- ✅ Call to action
-- ⚠️ Warning or important detail that needs special attention
-- 🔎 Deep dive into a topic—optional but enriching knowledge
-- 🤔Exercises
-- 💡 Helpful tips for exercises
+- ✅ Key actions and their concrete benefits
+- ⚠️ Common pitfalls and how to avoid them
+- 🔎 Optional deep dives for advanced understanding
+- 🧠 Practice exercises and AI prompting techniques
+- 💡 Solution hints and tips
 
 ## Acknowledgements
 
