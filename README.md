@@ -135,7 +135,7 @@ The book is a work in progress, with an expected completion date around the end 
 
 ### 4. How can I contribute to this book?
 
-We welcome all contributions! If you find errors, have ideas for improvements, or want to add new content, please submit a PR or open an issue on our GitHub repository. Your feedback is invaluable in making this book better for all Rust beginners. If your contribution significantly impacts the book, I'll personally acknowledge you in the acknowledgments section.
+We welcome contributions of all kinds! If you spot errors, have ideas for improvements, or want to add content, please join our discussions, submit pull requests, or open issues on the GitHub repository. Your feedback will help improve this book for all Rust beginners. If your contribution makes a significant impact, I'll acknowledge you personally in the book's acknowledgments section.
 
 ### 5. Why is this a "No-Frills Edition"?
 
