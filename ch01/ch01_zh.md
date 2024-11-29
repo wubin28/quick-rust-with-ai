@@ -336,7 +336,7 @@ cargo clean
 # 安装cargo-generate代码生成工具
 cargo install cargo-generate
 # 根据我在GitHub上的模版代码生成一份新代码
-cargo generate wubin28/rusty_mb2_template_light_up_microbit_board
+cargo generate wubin28/mb2-led-template
 # 当工具提示输入Project Name时，随便输入一个项目名即可，比如lu1l，表示Light Up 1st Led
 # 进入这个新创建的项目目录
 cd lu1l
