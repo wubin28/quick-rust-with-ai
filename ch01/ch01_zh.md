@@ -422,6 +422,8 @@ ARM Cortex-M4 是一款由全球领先的处理器架构设计公司 ARM 设计�
 rustup target add thumbv7em-none-eabihf
 ```
 
+⚠️注意：只需要安装一次目标平台，之后编译和运行程序时无需重复安装。
+
 安装完后，还可以运行下面的命令列出所安装的目标平台，会看到`thumbv7em-none-eabihf`目标平台已经安装好了，如下所示：
 
 ```bash
@@ -534,6 +536,8 @@ cargo binstall probe-rs-tools
 brew tap probe-rs/probe-rs
 brew install probe-rs
 ```
+
+⚠️注意：只需要安装一次probe-rs工具，之后运行程序时无需重复安装。
 
 安装完probe-rs工具后，再次尝试运行下面的命令往micro:bit v2开发板上烧录程序（注意：在Windows上运行可能会报错，见后文）：
 
