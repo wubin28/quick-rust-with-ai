@@ -86,7 +86,7 @@
 
 ## 本书代码
 
-本书代码可在GitHub上的[https://github.com/wubin28/learn_rust_by_games](https://github.com/wubin28/learn_rust_by_games)代码库中下载。每个代码清单都标注了其在代码库中的具体位置，方便读者查找和运行。代码库按章节组织，格式为chxx（xx为章节编号）。
+本书代码可在GitHub上的[https://github.com/wubin28/learn-rust-by-games](https://github.com/wubin28/learn-rust-by-games)代码库中下载。每个代码清单都标注了其在代码库中的具体位置，方便读者查找和运行。代码库按章节组织，格式为chxx（xx为章节编号）。
 
 ## 开发环境准备
 

@@ -342,7 +342,7 @@ cargo generate wubin28/mb2-led-template
 cd lu1l
 ```
 
-⚠️如果你由于各种原因无法运行上面的`cargo generate`命令，也不用担心。你可以直接在[github.com/wubin28/learn_rust_by_games](https://github.com/wubin28/learn_rust_by_games)代码库的ch01文件夹下找到`lu1l`文件夹，里面已经包含了生成好的代码。
+⚠️如果你由于各种原因无法运行上面的`cargo generate`命令，也不用担心。你可以直接在[https://github.com/wubin28/learn-rust-by-games(https://github.com/wubin28/learn-rust-by-games)]代码库的ch01文件夹下找到`lu1l`文件夹，里面已经包含了生成好的代码。
 
 ## 1.3.3 编译代码
 

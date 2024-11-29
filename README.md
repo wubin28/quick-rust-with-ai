@@ -85,7 +85,7 @@ In essence, CC BY-NC-ND 4.0 is a relatively strict license. It allows free shari
 
 ## Book Code
 
-You can download the code for this book from the GitHub repository at [https://github.com/wubin28/learn_rust_by_games](https://github.com/wubin28/learn_rust_by_games). Each code listing includes its specific location in the repository, making it easy for readers to find and run. The repository is organized by chapters, using the format chxx (where xx represents the chapter number).
+You can download the code for this book from the GitHub repository at [https://github.com/wubin28/learn-rust-by-games](https://github.com/wubin28/learn-rust-by-games). Each code listing includes its specific location in the repository, making it easy for readers to find and run. The repository is organized by chapters, using the format chxx (where xx represents the chapter number).
 
 ## Development Environment Setup
 
