@@ -158,7 +158,7 @@ Rust在嵌入式开发中既保持现代思维又尊重传统，掌握后能帮�
 
 | **计算机操作系统** | **Ubuntu 24.04.1 LTS**  | **macOS Sequoia 15.1.1** | **Windows 11 Pro 23H2** |
 | --- | --- | --- | --- |
-| 命令行shell终端 | 5.2.21(1)-release (x86_64-pc-linux-gnu)<br># 查看shell类型<br>`echo $SHELL`<br># 如何查看版本号<br>按窗口键 → 搜“Terminal” → 点击Terminal打开 → 输入命令`bash --version` | zsh 5.9 (arm-apple-darwin22.1.0)<br># 查看shell类型<br>`echo $SHELL`<br># 如何查看版本号<br>按Command + 空格键打开spotlight → 搜“Terminal” → 点击Terminal打开 → 输入命令`zsh --version` | cmd (Command Prompt) 10.0.22631.4541<br># 如何查看版本号<br>屏幕底部任务条→Search框→搜“command prompt” → 打开command prompt → 输入命令`ver` |
+| 命令行shell终端 | bash 5.2.21(1)-release (x86_64-pc-linux-gnu)<br># 查看shell类型<br>`echo $SHELL`<br># 如何查看版本号<br>按窗口键 → 搜“Terminal” → 点击Terminal打开 → 输入命令`bash --version` | zsh 5.9 (arm-apple-darwin22.1.0)<br># 查看shell类型<br>`echo $SHELL`<br># 如何查看版本号<br>按Command + 空格键打开spotlight → 搜“Terminal” → 点击Terminal打开 → 输入命令`zsh --version` | cmd (Command Prompt) 10.0.22631.4541<br># 如何查看版本号<br>屏幕底部任务条→Search框→搜“command prompt” → 打开command prompt → 输入命令`ver` |
 
 ✅根据表1-1中的提示，请打开终端窗口，并输入对应你操作系统的命令来查看命令行shell版本号，以验证shell是否正常工作。
 
