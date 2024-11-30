@@ -330,7 +330,7 @@ cargo clean
 
 如何编写点亮第一个LED灯的Rust代码呢？编写代码就像写文章一样——我们可以先参考他人的作品，然后加以修改，就能完成自己的作品。在这里，你不用到处找参考代码，因为我已经准备好了一份示例代码。
 
-✅接下来，你只需要执行以下命令：先安装[代码生成工具cargo-generate](https://github.com/cargo-generate/cargo-generate)，然后用这个工具从[我的GitHub模版代码仓库](https://github.com/wubin28/rusty_mb2_template_light_up_microbit_board)生成一份代码。有了这个基础，稍作修改就能完成你自己的程序了。
+✅接下来，你只需要执行以下命令：先安装[代码生成工具cargo-generate](https://github.com/cargo-generate/cargo-generate)，然后用这个工具从[我的GitHub模版代码仓库](https://github.com/wubin28/mb2-led-template)生成一份代码。有了这个基础，稍作修改就能完成你自己的程序了。
 
 ```bash
 # 安装cargo-generate代码生成工具
