@@ -29,38 +29,37 @@ The chapter titles will be refined and adjusted throughout the writing process.
 
 ### Part One: Lighting Up LEDs
 
-- [Chapter 1: Light Up Your First LED](./ch01/ch01.md)
-- Chapter 2: Make Your First LED Blink
-- Chapter 3: LED Text Scrolling Display
-- Chapter 4: Accidentally Changing Code and Automated Testing
-- Chapter 5: Memory Challenge Game and Variables
-- Chapter 6: Virtual Pet Game and Ownership
-- Chapter 7: Whack-a-Mole Game and Structs
-- Chapter 8: Anti-Theft Alarm System and Error Handling
-- Chapter 9: Reaction Test Game and Lifetimes
-- Chapter 10: Snake Game and Unsafe Rust
+- [Chapter 1: Light Up Your First LED and the Joy of Rust](./ch01/ch01.md)
+- Chapter 2: Make Your First LED Blink and Programming Supertools
+- Chapter 3: LED Text Scrolling Display and Automated Testing
+- Chapter 4: Memory Challenge Game and Variables
+- Chapter 5: Virtual Pet Game and Ownership
+- Chapter 6: Whack-a-Mole Game and Structs
+- Chapter 7: Anti-Theft Alarm System and Error Handling
+- Chapter 8: Reaction Test Game and Lifetimes
+- Chapter 9: Snake Game and Unsafe Rust
 
 ### Part Two: Building Multi-threaded Web Games
 
-- Chapter 11: Online Tic-Tac-Toe Game and Cargo
-- Chapter 12: Multi-User Chat Room and Packages, Crates, and Modules
-- Chapter 13: Customizable Card Battle Game and Generics
-- Chapter 14: Online Multiplayer Werewolf Game and Traits
-- Chapter 15: Collaborative Puzzle Game and Smart Pointers
-- Chapter 16: Real-time Leaderboard and Concurrency
-- Chapter 17: Real-time Strategy Game Server and Asynchronous Programming
+- Chapter 10: Online Tic-Tac-Toe Game and Cargo
+- Chapter 11: Multi-User Chat Room and Packages, Crates, and Modules
+- Chapter 12: Customizable Card Battle Game and Generics
+- Chapter 13: Online Multiplayer Werewolf Game and Traits
+- Chapter 14: Collaborative Puzzle Game and Smart Pointers
+- Chapter 15: Real-time Leaderboard and Concurrency
+- Chapter 16: Real-time Strategy Game Server and Asynchronous Programming
 
 ### Part Three: Creating Fun Command-Line Games
 
-- Chapter 18: Sudoku Game and Common Collection Types
-- Chapter 19: Text Adventure Game and Enums
-- Chapter 20: Riddle Guessing Game and Pattern Matching
-- Chapter 21: Word Frequency Counter and Iterators
-- Chapter 22: Custom Calculator and Closures
-- Chapter 23: Command-Line Mini Game Engine and Macros
-- Chapter 24: Role-Playing Game and Object-Oriented Programming
-- Chapter 25: Multi-functional Command-Line Tool and Advanced Types
-- Chapter 26: Publishing Games to [crates.io](http://crates.io) and Sharing the Joy
+- Chapter 17: Sudoku Game and Common Collection Types
+- Chapter 18: Text Adventure Game and Enums
+- Chapter 19: Riddle Guessing Game and Pattern Matching
+- Chapter 20: Word Frequency Counter and Iterators
+- Chapter 21: Custom Calculator and Closures
+- Chapter 22: Command-Line Mini Game Engine and Macros
+- Chapter 23: Role-Playing Game and Object-Oriented Programming
+- Chapter 24: Multi-functional Command-Line Tool and Advanced Types
+- Chapter 25: Publishing Games to [crates.io](http://crates.io) and Sharing the Joy
 - Appendix
 
 ## Copyright License Agreement
