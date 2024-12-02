@@ -843,10 +843,9 @@ fn main() -> ! {  // 返回 ! 表示这是一个不返回的函数
     // 获取 microbit 板的控制权
     let mut board = Board::take().unwrap();
     
-    // 设置 LED 矩阵的第4列为低电平
+    // 点亮LED点阵的第4行第4列的LED，
+    // 即在设置第4列为低电平的同时，设置第4行为高电平
     board.display_pins.col4.set_low().unwrap();
-    
-    // 设置 LED 矩阵的第4行为高电平
     board.display_pins.row4.set_high().unwrap();
     
     // 无限循环保持程序运行
