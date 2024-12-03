@@ -416,7 +416,7 @@ ARM Cortex-M4 是一款由全球领先的处理器架构设计公司 ARM 设计�
 
 简而言之，这个编译错误的原因很简单：我们试图为 micro:bit 的目标平台（即 `thumbv7em-none-eabihf`）编译代码，但这个平台还未安装在我们的系统中。
 
-✅既然我们已经理解了这个错误，接下来让我们运行以下命令来安装目标平台，这样编译器就能进行**交叉编译**（指在Linux、macOS或Windows上编译程序，使它能够在micro:bit v2开发板上运行的过程）：
+✅理解了这个错误后，让我们运行以下命令来安装目标平台，使编译器能进行**交叉编译**（cross-compilation，即在Linux、macOS或Windows上编译程序，让它能在micro:bit v2开发板上运行。由于第一篇中的编译都针对micro:bit v2开发板，为简洁起见，本篇后文提到的编译均指交叉编译）：
 
 ```bash
 rustup target add thumbv7em-none-eabihf
