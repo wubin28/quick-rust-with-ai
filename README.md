@@ -31,12 +31,12 @@ The chapter titles will be refined and adjusted throughout the writing process.
 
 - [Chapter 1: Light Up Your First LED and the Joy of Rust](./ch01/ch01.md)
 - Chapter 2: Make Your First LED Blink and Programming Supertools
-- Chapter 3: LED Text Scrolling Display and Automated Testing
-- Chapter 4: Memory Challenge Game and Variables
-- Chapter 5: Virtual Pet Game and Ownership
-- Chapter 6: Whack-a-Mole Game and Structs
-- Chapter 7: Anti-Theft Alarm System and Error Handling
-- Chapter 8: Reaction Test Game and Lifetimes
+- Chapter 3: Memory Challenge Game and Variables
+- Chapter 4: Virtual Pet Game and Ownership
+- Chapter 5: Whack-a-Mole Game and Structs
+- Chapter 6: Anti-Theft Alarm System and Error Handling
+- Chapter 7: Reaction Test Game and Lifetimes
+- Chapter 8: LED Text Scrolling Display and Automated Testing
 - Chapter 9: Snake Game and Unsafe Rust
 
 ### Part Two: Building Multi-threaded Web Games
