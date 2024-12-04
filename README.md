@@ -11,7 +11,7 @@ Author: Bin Wu
 
 "Learn Rust by Games: The No-Frills Edition" is a free limited-sharing ebook released under the CC BY-NC-ND 4.0 license. The book takes a unique approach to **teaching Rust by having readers create LED games, web games, and command-line games**. Throughout the learning process, we explore common programming pitfalls and their solutions. We also show how to leverage AI tools to assist with programming, making the learning journey both practical and engaging. Our goal is to help you master Rust while having fun.
 
-The book is designed for two types of learners: complete programming beginners and experienced programmers who are new to embedded development.
+This book caters to two types of beginners: those with no programming experience at all, and developers who know other programming languages but are new to Rust. After completing Chapter 1 and lighting up their first LED, readers interested in Rust embedded development can explore other specialized books on that topic. While the first part includes embedded development, our main focus is teaching the Rust programming language itself. We chose the micro:bit v2 platform for our starting point because there's something magical about controlling twinkling LEDs and cute little buttons with Rust code.
 
 The content is divided into three parts—embedded, web, and command-line game development. Each chapter introduces specific Rust concepts through hands-on game projects. This practical approach allows readers to immediately apply what they've learned, reinforcing their understanding of Rust.
 
