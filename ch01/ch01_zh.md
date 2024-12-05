@@ -167,7 +167,7 @@ Rust在嵌入式开发中既保持现代思维又尊重传统，掌握后能帮�
 
 表1-1 点亮第一个LED灯所用的命令行shell终端的版本号
 
-| **Ubuntu 24.04.1 LTS**  | **macOS Sequoia 15.1.1** | **Windows 11 Pro 23H2** |
+| **Ubuntu 24.04.1 LTS上的bash**  | **macOS Sequoia 15.1.1上的zsh** | **Windows 11 Pro 23H2上的CMD** |
 | --- | --- | --- |
 | bash 5.2.21(1)-release (x86_64-pc-linux-gnu)<br># 查看shell类型<br>`echo $SHELL`<br># 如何查看版本号<br>按窗口键 → 搜“Terminal” → 点击Terminal打开 → 输入命令`bash --version` | zsh 5.9 (arm-apple-darwin22.1.0)<br># 查看shell类型<br>`echo $SHELL`<br># 如何查看版本号<br>按Command + 空格键打开spotlight → 搜“Terminal” → 点击Terminal打开 → 输入命令`zsh --version` | cmd (Command Prompt) 10.0.22631.4541<br># 如何查看版本号<br>屏幕底部任务条→Search框→搜“command prompt” → 打开command prompt → 输入命令`ver` |
 
@@ -181,7 +181,7 @@ Rust在嵌入式开发中既保持现代思维又尊重传统，掌握后能帮�
 
 表1-2 Rust安装要点
 
-| **Ubuntu 24.04.1 LTS**  | **macOS Sequoia 15.1.1** | **Windows 11 Pro 23H2** |
+| **在Ubuntu上安装Rust**  | **在macOS上安装Rust** | **在Windows上安装Rust** |
 |--- | --- | --- |
 | # 查看rust编译器版本（检查是否已安装）<br>`rustc --version`<br># 安装rust<br>（请参考Rust官网安装页面）<br># 参考网页<br>https://www.rust-lang.org/tools/install<br># 列出已安装的工具链<br>`rustup toolchain list`<br>`rustup show`<br># 若很久前已安装则可升级工具链 和 rustup本身<br>`rustup update` | （同左） | # 在rust官网下载页面下载 rustup-init.exe，然后在文件管理器中用鼠标双击安装<br># 参考网页<br>https://www.rust-lang.org/tools/install |
 
@@ -196,14 +196,6 @@ rustc --version
 ```bash
 rustc 1.82.0 (f6e511eec 2024-10-15)
 ```
-
-我在点亮第一个LED灯所用的Rust版本号如表1-3所示。
-
-表1-3 点亮第一个LED灯所用的Rust版本号
-
-| **Ubuntu 24.04.1 LTS**  | **macOS Sequoia 15.1.1** | **Windows 11 Pro 23H2** |
-|--- | --- | --- |
-|rustc: 1.82.0 (f6e511eec 2024-10-15) | （同左） | （同左） |
 
 ## 1.2.6 Rust能工作吗
 
@@ -624,11 +616,11 @@ fn main() -> ! {  // 返回 ! 表示这是一个不返回的函数
 
 🧠从代码可以看出，程序确实点亮的是第4行第4列的LED灯。你知道如何修改代码来点亮第1行第1列的灯吗？不妨动手试试看。
 
-💡打开你常用的编辑器，将代码中的`col4`和`row4`分别改为`col1`和`row1`，保存后运行`cargo run`命令。如果你还没有安装VS Code编辑器（我们稍后会介绍），也可以通过文件管理器来修改——只需右击main.rs文件，选择"编辑"即可。不同操作系统的文件管理工具如表1-4所示：
+💡打开你常用的编辑器，将代码中的`col4`和`row4`分别改为`col1`和`row1`，保存后运行`cargo run`命令。如果你还没有安装VS Code编辑器（我们稍后会介绍），也可以通过文件管理器来修改——只需右击main.rs文件，选择"编辑"即可。不同操作系统的文件管理工具如表1-3所示：
 
-表1-4 不同操作系统的文件管理工具
+表1-3 不同操作系统的文件管理工具
 
-| **Ubuntu 24.04.1 LTS**  | **macOS Sequoia 15.1.1** | **Windows 11 Pro 23H2** |
+| **Ubuntu的文件管理工具**  | **macOS的文件管理工具** | **Windows的文件管理工具** |
 | --- | --- | --- |
 | Files | Finder | File Explorer |
 
