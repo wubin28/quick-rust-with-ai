@@ -29,8 +29,8 @@ The chapter titles will be refined and adjusted throughout the writing process.
 
 ### Part One: Lighting Up LEDs
 
-- [Chapter 1: Light Up Your First LED and the Joy of Rust](./ch01/ch01.md)
-- Chapter 2: Make Your First LED Blink and Programming Supertools
+- [Chapter 1: Lighting Up Your First LED and the Joy of Rust](./ch01/ch01.md)
+- Chapter 2: Making Your First LED Blink and Programming Supertools
 - Chapter 3: Memory Challenge Game and Variables
 - Chapter 4: Virtual Pet Game and Ownership
 - Chapter 5: Whack-a-Mole Game and Structs
