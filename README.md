@@ -119,7 +119,7 @@ I'm also thankful to the online friend "Don't Hit Xiao Lan" for their valuable i
 
 ### 1. Is this book suitable for programming beginners?
 
-This book is ideal for two types of beginners: those with no programming experience whatsoever, and those familiar with programming but new to embedded development.
+This book is ideal for two types of beginners: those with no programming experience whatsoever, and those  know other programming languages but are new to Rust. 
 
 ### 2. How does this book differ from other Rust learning resources?
 
