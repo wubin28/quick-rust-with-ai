@@ -680,6 +680,8 @@ cortex-m-rt = "0.7.3"
 panic-halt = "0.2.0"
 # BBC micro:bit v2开发板支持包
 microbit-v2 = "0.15.0"
+# 嵌入式硬件抽象层接口
+embedded-hal = "1.0.0"
 ```
 
 Cargo.toml是Rust项目的核心配置文件，它记录了项目的基本信息，如项目名称、版本号和所需的依赖包。
