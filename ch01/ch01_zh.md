@@ -678,21 +678,8 @@ edition = "2021"
 cortex-m-rt = "0.7.3"
 # 提供panic处理机制,程序崩溃时停止运行
 panic-halt = "0.2.0"
-# 通过RTT提供panic信息输出
-panic-rtt-target = "0.1.3"
-# RTT(实时传输)调试工具
-rtt-target = "0.5.0"
 # BBC micro:bit v2开发板支持包
 microbit-v2 = "0.15.0"
-# 嵌入式硬件抽象层接口
-embedded-hal = "1.0.0"
-
-# 有关Cortex-M处理器核心的配置
-[dependencies.cortex-m]
-# Cortex-M处理器核心功能支持
-version = "0.7.7"
-# 启用内联汇编和单核心关键区段功能
-features = ["inline-asm", "critical-section-single-core"]
 ```
 
 Cargo.toml是Rust项目的核心配置文件，它记录了项目的基本信息，如项目名称、版本号和所需的依赖包。
