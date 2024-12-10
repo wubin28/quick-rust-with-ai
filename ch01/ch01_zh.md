@@ -123,11 +123,11 @@ Rust在嵌入式开发中既保持现代思维又尊重传统，掌握后能帮�
 
 ![f1-2.jpg](./f1-2.jpg)
 
-图1-2 micro:bit v2正面展示了产品名称、几块芯片和复位按钮，图中还有一根USB micro数据线
+图1-2 micro:bit v2正面展示了5×5的LED点阵和两侧的按钮
 
 ![f1-3.jpg](./f1-3.jpg)
 
-图1-3 micro:bit v2背面展示了5×5的LED点阵和两侧的按钮
+图1-3 micro:bit v2背面展示了产品名称、几块芯片和复位按钮，图中还有一根USB micro数据线
 
 这要从英国广播公司（BBC）的一群富有创意的工程师说起。看到许多孩子沉迷手机游戏却对科技创造毫无兴趣，他们萌生了一个想法：何不设计一个简单有趣的小工具，让孩子们也能体验创造的乐趣？这就是micro:bit v1的由来。2015年，这个小设备作为特别礼物，送到了一百万名英国中学生手中。出乎意料的是，它广受欢迎，很快流传全球。
 
@@ -327,7 +327,7 @@ cargo clean
 
 # 1.3 点亮左上角第一个LED灯
 
-完成了Rust版的"Hello, world!"程序后，让我们正式踏入Rust嵌入式编程的世界——我们将编写一段Rust代码，点亮micro:bit v2背面5×5 LED点阵中左上角的第一个LED灯。
+完成了Rust版的"Hello, world!"程序后，让我们正式踏入Rust嵌入式编程的世界——我们将编写一段Rust代码，点亮micro:bit v2正面5×5 LED点阵中左上角的第一个LED灯。
 
 ## 1.3.1 生成代码
 
@@ -391,11 +391,11 @@ target = "thumbv7em-none-eabihf"
 # 其他行略
 ```
 
-上面这两行配置指定了全局编译目标为 `thumbv7em-none-eabihf`。这告诉 cargo，所有构建操作（包括 cargo build 和 cargo run）都将针对这个目标平台进行。Rust 编译器会生成适配 ARM Cortex-M4 处理器内核的代码（[该内核位于 micro:bit v2 开发板正面左侧的 Nordic nRF52833 微控制器芯片内](https://tech.microbit.org/hardware/)，如图1-4所示），让程序直接运行在 micro:bit v2 的硬件上，而不是生成面向常规桌面平台的代码。最终生成的二进制文件会存放在 target/thumbv7em-none-eabihf/ 文件夹中。
+上面这两行配置指定了全局编译目标为 `thumbv7em-none-eabihf`。这告诉 cargo，所有构建操作（包括 cargo build 和 cargo run）都将针对这个目标平台进行。Rust 编译器会生成适配 ARM Cortex-M4 处理器内核的代码（[该内核位于 micro:bit v2 开发板背面左侧的 Nordic nRF52833 微控制器芯片内](https://tech.microbit.org/hardware/)，如图1-4所示），让程序直接运行在 micro:bit v2 的硬件上，而不是生成面向常规桌面平台的代码。最终生成的二进制文件会存放在 target/thumbv7em-none-eabihf/ 文件夹中。
 
 ![f1-4.png](./f1-4.png)
 
-图1-4 ARM Cortex-M4 处理器内核位于 micro:bit v2 开发板正面左侧的 Nordic nRF52833 微控制器芯片内
+图1-4 ARM Cortex-M4 处理器内核位于 micro:bit v2 开发板背面左侧的 Nordic nRF52833 微控制器芯片内
 
 🔎micro:bit v2 开发板、Nordic nRF52833 微控制器（MCU，microcontroller unit）和 ARM Cortex-M4 处理器内核是如何组合在一起的？
 
