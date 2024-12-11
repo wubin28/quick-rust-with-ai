@@ -698,6 +698,25 @@ Cargo.toml的便利性令人称赞。它不仅支持精确的版本控制和便�
 
 Cargo.toml简化了项目管理流程，显著提升了开发效率，是个人开发和团队协作中的得力助手。
 
+🧠为什么我们需要在Cargo.toml的`[dependencies]`下列出这些依赖包？如果删除它们会发生什么？你能找出这些依赖包分别对应main.rs中的哪些代码吗？
+
+💡Cargo.toml的`[dependencies]`下的依赖包 → main.rs中所对应的代码
+
+- `cortex-m-rt` → `use cortex_m_rt::entry`和`#[entry]`标注
+- `panic-halt` → `use panic_halt as _`
+- `microbit-v2` → `use microbit::board::Board`
+- `embedded-hal` → `use embedded_hal::digital::OutputPin`
+
+🧠为什么仅使用Cargo.toml中的microbit-v2依赖包还不够，还需要embedded-hal依赖包来点亮LED灯？这两个依赖包是如何配合工作的？
+
+💡首先，`microbit-v2`作为一个板级支持包，就像一位管家，负责管理整个开发板。但管家需要一套标准的、平台无关的规则来操作各种设备，包括LED灯。这样的标准规则能让同样的操作方法适用于不同的硬件平台。
+
+这时，`embedded-hal`就像一本通用的操作手册，它定义了标准接口（如`OutputPin` trait）。它告诉管家："要打开或关闭设备，你需要遵循这些规则。"这使得不同的硬件管理者都能按照统一的方式工作。
+
+它们的配合是这样的：`microbit-v2`这位专业的管家，通过`embedded-hal`提供的标准方法来控制硬件。当我们想要点亮LED时，管家就会使用`embedded-hal`定义的`OutputPin` trait来完成这项工作。
+
+要点亮LED，除了管家和标准操作手册外，还需要具体执行工作的团队：实现`embedded-hal`的针对nRF52833平台的"班组长"`nrf52833-hal`（专注于what而非how），以及班组长所依赖的"专业技工"`nrf52833-pac`（了解how）。
+
 **通用Rust项目包管理文件：Cargo.lock**
 
 如代码清单1-3所示：
