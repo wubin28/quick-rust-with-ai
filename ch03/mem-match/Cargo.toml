@@ -1,0 +1,10 @@
+[package]
+name = "mem-match"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+cortex-m-rt = "0.7.3"
+panic-halt = "0.2.0"
+microbit-v2 = "0.15.0"
+embedded-hal = "1.0.0"
