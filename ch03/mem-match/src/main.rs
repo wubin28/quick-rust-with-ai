@@ -3,16 +3,33 @@
 #![no_std]
 
 use cortex_m_rt::entry;
-use embedded_hal::digital::OutputPin;
 use microbit::board::Board;
+use microbit::display::blocking::Display;
+use microbit::hal::Timer;
 use panic_halt as _;
+
+static SMILEY: [[u8; 5]; 5] = [
+    [0, 1, 0, 1, 0],
+    [0, 1, 0, 1, 0],
+    [0, 0, 0, 0, 0],
+    [1, 0, 0, 0, 1],
+    [0, 1, 1, 1, 0],
+];
 
 #[entry]
 fn main() -> ! {
-    let mut board = Board::take().unwrap();
+    let board = Board::take().unwrap();
+    let mut display = Display::new(board.display_pins);
+    let mut timer = Timer::new(board.TIMER0);
+    let mut display_buffer = [[0u8; 5]; 5];
 
-    board.display_pins.col4.set_low().unwrap();
-    board.display_pins.row4.set_high().unwrap();
+    for row in 0..5 {
+        for col in 0..5 {
+            display_buffer[row][col] = if SMILEY[row][col] == 1 { 9 } else { 0 };
+        }
+    }
 
-    loop {}
+    loop {
+        display.show(&mut timer, display_buffer, 100);
+    }
 }
