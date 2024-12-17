@@ -28,16 +28,15 @@ fn main() -> ! {
     let mut timer = Timer::new(board.TIMER0);
     let mut display_buffer = [[MIN_BRIGHTNESS; MATRIX_DIMENSION]; MATRIX_DIMENSION];
 
-    for row in 0..MATRIX_DIMENSION {
-        for col in 0..MATRIX_DIMENSION {
-            display_buffer[row][col] = if SMILEY[row][col] == 1 {
+    for (row_idx, row) in SMILEY.iter().enumerate().take(MATRIX_DIMENSION) {
+        for (col_idx, &value) in row.iter().enumerate().take(MATRIX_DIMENSION) {
+            display_buffer[row_idx][col_idx] = if value == 1 {
                 MAX_BRIGHTNESS
             } else {
                 MIN_BRIGHTNESS
             };
         }
     }
-
     loop {
         display.show(&mut timer, display_buffer, DURATION_100_MS);
     }
