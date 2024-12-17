@@ -29,7 +29,7 @@ fn main() -> ! {
     let mut display_buffer = [[MIN_BRIGHTNESS; MATRIX_DIMENSION]; MATRIX_DIMENSION];
 
     for row in 0..MATRIX_DIMENSION {
-        for col in 0..(MATRIX_DIMENSION + 1) {
+        for col in 0..MATRIX_DIMENSION {
             display_buffer[row][col] = if SMILEY[row][col] == 1 {
                 MAX_BRIGHTNESS
             } else {
