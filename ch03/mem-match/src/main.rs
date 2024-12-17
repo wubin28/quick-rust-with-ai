@@ -6,7 +6,7 @@ use cortex_m_rt::entry;
 use microbit::board::Board;
 use microbit::display::blocking::Display;
 use microbit::hal::Timer;
-use panic_halt as _;
+use panic_semihosting as _;
 
 const MATRIX_DIMENSION: usize = 5;
 const MAX_BRIGHTNESS: u8 = 9;
@@ -29,7 +29,7 @@ fn main() -> ! {
     let mut display_buffer = [[MIN_BRIGHTNESS; MATRIX_DIMENSION]; MATRIX_DIMENSION];
 
     for row in 0..MATRIX_DIMENSION {
-        for col in 0..MATRIX_DIMENSION {
+        for col in 0..(MATRIX_DIMENSION + 1) {
             display_buffer[row][col] = if SMILEY[row][col] == 1 {
                 MAX_BRIGHTNESS
             } else {
