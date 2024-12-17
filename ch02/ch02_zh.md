@@ -438,7 +438,7 @@ fn main() -> ! {
 
 遇事不决，求助AI。让我们把这个疑问和代码清单2-1交给AI，请它给出改进后的代码，如代码清单2-2所示：
 
-代码清单2-2 ch02/b1l/examples/b1lut0.rs 使用micro:bit v2开发板上的专用硬件定时器TIMER0外设实现延时
+代码清单2-2 ch02/b1l/examples/b1lut0.rs 使用mb2开发板上的专用硬件定时器TIMER0外设实现延时
 
 ```rust
 #![deny(unsafe_code)]
@@ -590,11 +590,11 @@ PowerShell 7+则像一位见多识广的现代管家。它不仅跨平台工作�
 
 这三个旧终端都不支持分屏功能，而新终端都支持。后续所有终端命令都将在这些现代化终端（安装要点见后文）中执行。
 
-以Ubuntu的Terminator为例，在用gdb调试micro:bit v2开发板时，按下`Ctrl+Shift+E`可将屏幕分为左右两部分：左侧运行`cargo embed`连接开发板进行调试，右侧用于设置断点、单步执行程序和查看变量值。每个分割出的屏幕还可以继续分屏，灵活满足不同需求。这比打开多个Terminal窗口再手动调整位置要方便得多，如图2-10所示：
+以Ubuntu的Terminator为例，在用gdb调试mb2开发板时，按下`Ctrl+Shift+E`可将屏幕分为左右两部分：左侧运行`cargo embed`连接开发板进行调试，右侧用于设置断点、单步执行程序和查看变量值。每个分割出的屏幕还可以继续分屏，灵活满足不同需求。这比打开多个Terminal窗口再手动调整位置要方便得多，如图2-10所示：
 
 ![f2-10.png](f2-10.png)
 
-图2-10 在Ubuntu的Terminator中使用分屏来用gdb调试micro:bit v2开发板
+图2-10 在Ubuntu的Terminator中使用分屏来用gdb调试mb2开发板
 
 🔎Ubuntu提供两款重要的终端：默认的GNOME Terminal和功能强大的Terminator。GNOME Terminal作为Ubuntu的原生终端模拟器，就像一位可靠的老朋友，轻巧易用，能满足日常命令行操作需求。Terminator则是一位全能选手，专为处理复杂任务的高级用户和开发者设计。
 
