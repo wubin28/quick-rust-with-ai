@@ -3,6 +3,8 @@
 #![no_std]
 
 use cortex_m_rt::entry;
+use embedded_hal::blocking::delay::DelayMs;
+use embedded_hal::digital::v2::InputPin;
 use microbit::board::Board;
 use microbit::display::blocking::Display;
 use microbit::hal::Timer;
@@ -39,5 +41,11 @@ fn main() -> ! {
     }
     loop {
         display.show(&mut timer, display_buffer, DURATION_100_MS);
+
+        if board.buttons.button_a.is_low().unwrap() {
+            let empty_buffer = [[0u8; 5]; 5];
+            display.show(&mut timer, empty_buffer, 500);
+            timer.delay_ms(1000_u32);
+        }
     }
 }
