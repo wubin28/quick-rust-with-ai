@@ -14,6 +14,8 @@ const MATRIX_DIMENSION: usize = 5;
 const MAX_BRIGHTNESS: u8 = 9;
 const MIN_BRIGHTNESS: u8 = 0;
 const DURATION_100_MS: u32 = 100;
+const DURATION_500_MS: u32 = 500;
+const DURATION_1000_MS: u32 = 1000;
 
 static SMILEY: [[u8; MATRIX_DIMENSION]; MATRIX_DIMENSION] = [
     [0, 1, 0, 1, 0],
@@ -42,10 +44,11 @@ fn main() -> ! {
     loop {
         display.show(&mut timer, display_buffer, DURATION_100_MS);
 
-        if board.buttons.button_a.is_low().unwrap() {
-            let empty_buffer = [[0u8; 5]; 5];
-            display.show(&mut timer, empty_buffer, 500);
-            timer.delay_ms(1000_u32);
+        let is_button_a_pressed = board.buttons.button_a.is_low().unwrap();
+        if is_button_a_pressed {
+            let empty_buffer = [[MIN_BRIGHTNESS; MATRIX_DIMENSION]; MATRIX_DIMENSION];
+            display.show(&mut timer, empty_buffer, DURATION_500_MS);
+            timer.delay_ms(DURATION_1000_MS);
         }
     }
 }
