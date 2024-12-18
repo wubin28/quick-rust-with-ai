@@ -39,8 +39,8 @@ const MATRIX_DIMENSION: usize = 5;
 const MAX_BRIGHTNESS: u8 = 9;
 const MIN_BRIGHTNESS: u8 = 0;
 const DURATION_100_MS: u32 = 100;
-const DURATION_500_MS: u32 = 500;
 const DURATION_1000_MS: u32 = 1000;
+const PATTERN_NUM: usize = 10;
 
 static SMILEY: [[u8; MATRIX_DIMENSION]; MATRIX_DIMENSION] = [
     [0, 1, 0, 1, 0],
@@ -50,7 +50,7 @@ static SMILEY: [[u8; MATRIX_DIMENSION]; MATRIX_DIMENSION] = [
     [0, 1, 1, 1, 0],
 ];
 
-static PATTERNS: [[[u8; 5]; 5]; 10] = [
+static PATTERNS: [[[u8; MATRIX_DIMENSION]; MATRIX_DIMENSION]; PATTERN_NUM] = [
     // 0 Heart shape
     [
         [0, 1, 0, 1, 0],
@@ -136,7 +136,7 @@ static PATTERNS: [[[u8; 5]; 5]; 10] = [
 #[derive(PartialEq)]
 enum GameState {
     ShowingSmiley,
-    ShowingPatterns,
+    ShowingRandomPattern,
 }
 
 #[entry]
@@ -144,7 +144,7 @@ fn main() -> ! {
     let board = Board::take().unwrap();
     let mut display = Display::new(board.display_pins);
     let mut timer = Timer::new(board.TIMER0);
-    let mut game_state = GameState::ShowingSmiley;
+    let mut current_state = GameState::ShowingSmiley;
     let button_a = board.buttons.button_a;
 
     let seed = timer.read();
@@ -154,40 +154,48 @@ fn main() -> ! {
     copy_pattern_to_buffer(&SMILEY, &mut display_buffer);
 
     loop {
-        match game_state {
+        match current_state {
             GameState::ShowingSmiley => {
-                display.show(&mut timer, display_buffer, 100);
-                if button_a.is_low().unwrap() {
+                display.show(&mut timer, display_buffer, DURATION_100_MS);
+                let is_button_a_pressed = button_a.is_low().unwrap();
+                if is_button_a_pressed {
                     clear_buffer(&mut display_buffer);
-                    display.show(&mut timer, display_buffer, 100);
-                    timer.delay_ms(1000_u32);
-                    game_state = GameState::ShowingPatterns;
+                    display.show(&mut timer, display_buffer, DURATION_100_MS);
+                    timer.delay_ms(DURATION_1000_MS);
+                    current_state = GameState::ShowingRandomPattern;
                 }
             }
 
-            GameState::ShowingPatterns => {
-                let pattern_index = rng.next_range(10);
+            GameState::ShowingRandomPattern => {
+                let pattern_index = rng.next_range(PATTERN_NUM);
 
                 copy_pattern_to_buffer(&PATTERNS[pattern_index], &mut display_buffer);
-                display.show(&mut timer, display_buffer, 1000);
-                timer.delay_ms(1000_u32);
+                display.show(&mut timer, display_buffer, DURATION_1000_MS);
+                timer.delay_ms(DURATION_1000_MS);
             }
         }
     }
 }
 
-fn copy_pattern_to_buffer(pattern: &[[u8; 5]; 5], buffer: &mut [[u8; 5]; 5]) {
+fn copy_pattern_to_buffer(
+    pattern: &[[u8; MATRIX_DIMENSION]; MATRIX_DIMENSION],
+    buffer: &mut [[u8; MATRIX_DIMENSION]; MATRIX_DIMENSION],
+) {
     for (row, pattern_row) in pattern.iter().enumerate() {
         for (col, &value) in pattern_row.iter().enumerate() {
-            buffer[row][col] = if value == 1 { 9 } else { 0 };
+            buffer[row][col] = if value == 1 {
+                MAX_BRIGHTNESS
+            } else {
+                MIN_BRIGHTNESS
+            };
         }
     }
 }
 
-fn clear_buffer(buffer: &mut [[u8; 5]; 5]) {
+fn clear_buffer(buffer: &mut [[u8; MATRIX_DIMENSION]; MATRIX_DIMENSION]) {
     for (row, buffer_row) in buffer.iter_mut().enumerate() {
         for (col, cell) in buffer_row.iter_mut().enumerate() {
-            *cell = 0;
+            *cell = MIN_BRIGHTNESS;
         }
     }
 }
