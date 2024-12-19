@@ -159,6 +159,7 @@ fn main() -> ! {
     let mut timer = Timer::new(board.TIMER0);
     let mut current_state = GameState::ShowingSmiley;
     let button_a = board.buttons.button_a;
+    let button_b = board.buttons.button_b;
     let mut current_pattern = usize::MAX;
 
     let seed = timer.read();
@@ -167,6 +168,7 @@ fn main() -> ! {
     let mut display_buffer = [[MIN_BRIGHTNESS; MATRIX_DIMENSION]; MATRIX_DIMENSION];
 
     let mut was_button_a_pressed = button_a.is_low().unwrap();
+    let mut was_button_b_pressed = button_b.is_low().unwrap();
 
     loop {
         match current_state {
@@ -195,6 +197,10 @@ fn main() -> ! {
                     display.show(&mut timer, display_buffer, DURATION_50_MS);
                     let is_button_a_pressed = button_a.is_low().unwrap();
                     if is_button_a_pressed && !was_button_a_pressed {
+                        break;
+                    }
+                    let is_button_b_pressed = button_b.is_low().unwrap();
+                    if is_button_b_pressed && !was_button_b_pressed {
                         // Print the current pattern number using RTT
                         writeln!(channel, "Current pattern: {}", current_pattern).ok();
                         current_state = GameState::ShowingSmiley;
@@ -202,6 +208,7 @@ fn main() -> ! {
                         break;
                     }
                     was_button_a_pressed = is_button_a_pressed;
+                    was_button_b_pressed = is_button_b_pressed;
                     elapsed += DURATION_50_MS;
                 }
             }
