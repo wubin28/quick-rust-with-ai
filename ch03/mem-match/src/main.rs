@@ -43,7 +43,7 @@ const MIN_BRIGHTNESS: u8 = 0;
 const DURATION_100_MS: u32 = 100;
 const DURATION_1000_MS: u32 = 1000;
 const PATTERN_NUM: usize = 10;
-
+const DURATION_50_MS: u32 = 50;
 static SMILEY: [[u8; MATRIX_DIMENSION]; MATRIX_DIMENSION] = [
     [0, 1, 0, 1, 0],
     [0, 1, 0, 1, 0],
@@ -166,31 +166,43 @@ fn main() -> ! {
 
     let mut display_buffer = [[MIN_BRIGHTNESS; MATRIX_DIMENSION]; MATRIX_DIMENSION];
 
+    let mut was_button_a_pressed = button_a.is_low().unwrap();
+
     loop {
         match current_state {
             GameState::ShowingSmiley => {
                 copy_pattern_to_buffer(&SMILEY, &mut display_buffer);
                 display.show(&mut timer, display_buffer, DURATION_100_MS);
                 let is_button_a_pressed = button_a.is_low().unwrap();
-                if is_button_a_pressed {
+                if is_button_a_pressed && !was_button_a_pressed {
                     clear_buffer(&mut display_buffer);
                     display.show(&mut timer, display_buffer, DURATION_100_MS);
                     timer.delay_ms(DURATION_1000_MS);
                     current_state = GameState::ShowingRandomPattern;
                 }
+                was_button_a_pressed = is_button_a_pressed;
             }
 
             GameState::ShowingRandomPattern => {
                 current_pattern = rng.next_range(PATTERN_NUM);
                 copy_pattern_to_buffer(&PATTERNS[current_pattern], &mut display_buffer);
-                display.show(&mut timer, display_buffer, DURATION_1000_MS);
-                let is_button_a_pressed = button_a.is_low().unwrap();
-                if is_button_a_pressed {
-                    // Print the current pattern number using RTT
-                    writeln!(channel, "Current pattern: {}", current_pattern).ok();
-                    current_state = GameState::ShowingSmiley;
-                } else {
-                    timer.delay_ms(DURATION_1000_MS);
+
+                // Split the 1000ms delay into multiple shorter delays,
+                // check the button status each time
+                let mut elapsed = 0;
+                while elapsed < 1000 {
+                    // Refresh the display every 50ms
+                    display.show(&mut timer, display_buffer, DURATION_50_MS);
+                    let is_button_a_pressed = button_a.is_low().unwrap();
+                    if is_button_a_pressed && !was_button_a_pressed {
+                        // Print the current pattern number using RTT
+                        writeln!(channel, "Current pattern: {}", current_pattern).ok();
+                        current_state = GameState::ShowingSmiley;
+                        was_button_a_pressed = is_button_a_pressed;
+                        break;
+                    }
+                    was_button_a_pressed = is_button_a_pressed;
+                    elapsed += DURATION_50_MS;
                 }
             }
         }
