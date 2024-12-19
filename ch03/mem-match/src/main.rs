@@ -2,13 +2,15 @@
 #![no_main]
 #![no_std]
 
+use core::fmt::Write;
 use cortex_m_rt::entry;
 use embedded_hal::blocking::delay::DelayMs;
 use embedded_hal::digital::v2::InputPin;
 use microbit::board::Board;
 use microbit::display::blocking::Display;
 use microbit::hal::Timer;
-use panic_semihosting as _;
+use panic_probe as _;
+use rtt_target::rtt_init;
 
 struct XorShiftRng {
     state: u32,
@@ -141,21 +143,33 @@ enum GameState {
 
 #[entry]
 fn main() -> ! {
+    let mut channels = rtt_init! {
+        up: {
+            0: {
+                size: 1024
+                mode: NoBlockTrim
+                name: "Terminal"
+            }
+        }
+    };
+    let channel = &mut channels.up.0;
+
     let board = Board::take().unwrap();
     let mut display = Display::new(board.display_pins);
     let mut timer = Timer::new(board.TIMER0);
     let mut current_state = GameState::ShowingSmiley;
     let button_a = board.buttons.button_a;
+    let mut current_pattern = usize::MAX;
 
     let seed = timer.read();
     let mut rng = XorShiftRng::new(seed);
 
     let mut display_buffer = [[MIN_BRIGHTNESS; MATRIX_DIMENSION]; MATRIX_DIMENSION];
-    copy_pattern_to_buffer(&SMILEY, &mut display_buffer);
 
     loop {
         match current_state {
             GameState::ShowingSmiley => {
+                copy_pattern_to_buffer(&SMILEY, &mut display_buffer);
                 display.show(&mut timer, display_buffer, DURATION_100_MS);
                 let is_button_a_pressed = button_a.is_low().unwrap();
                 if is_button_a_pressed {
@@ -167,11 +181,17 @@ fn main() -> ! {
             }
 
             GameState::ShowingRandomPattern => {
-                let pattern_index = rng.next_range(PATTERN_NUM);
-
-                copy_pattern_to_buffer(&PATTERNS[pattern_index], &mut display_buffer);
+                current_pattern = rng.next_range(PATTERN_NUM);
+                copy_pattern_to_buffer(&PATTERNS[current_pattern], &mut display_buffer);
                 display.show(&mut timer, display_buffer, DURATION_1000_MS);
-                timer.delay_ms(DURATION_1000_MS);
+                let is_button_a_pressed = button_a.is_low().unwrap();
+                if is_button_a_pressed {
+                    // Print the current pattern number using RTT
+                    writeln!(channel, "Current pattern: {}", current_pattern).ok();
+                    current_state = GameState::ShowingSmiley;
+                } else {
+                    timer.delay_ms(DURATION_1000_MS);
+                }
             }
         }
     }
@@ -193,8 +213,8 @@ fn copy_pattern_to_buffer(
 }
 
 fn clear_buffer(buffer: &mut [[u8; MATRIX_DIMENSION]; MATRIX_DIMENSION]) {
-    for (row, buffer_row) in buffer.iter_mut().enumerate() {
-        for (col, cell) in buffer_row.iter_mut().enumerate() {
+    for (_row, buffer_row) in buffer.iter_mut().enumerate() {
+        for (_col, cell) in buffer_row.iter_mut().enumerate() {
             *cell = MIN_BRIGHTNESS;
         }
     }

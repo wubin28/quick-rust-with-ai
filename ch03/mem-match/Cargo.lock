@@ -49,6 +49,7 @@ checksum = "8ec610d8f49840a5b376c69663b6369e71f4b34484b9b2eb29fb918d92516cb9"
 dependencies = [
  "bare-metal",
  "bitfield",
+ "critical-section",
  "embedded-hal",
  "volatile-register",
 ]
@@ -74,13 +75,10 @@ dependencies = [
 ]
 
 [[package]]
-name = "cortex-m-semihosting"
-version = "0.3.7"
+name = "critical-section"
+version = "1.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6bffa6c1454368a6aa4811ae60964c38e6996d397ff8095a8b9211b1c1f749bc"
-dependencies = [
- "cortex-m",
-]
+checksum = "790eea4361631c5e7d22598ecd5723ff611904e3344ce8720784c93e3d83d40b"
 
 [[package]]
 name = "crunchy"
@@ -139,10 +137,13 @@ dependencies = [
 name = "mem-match"
 version = "0.1.0"
 dependencies = [
+ "cortex-m",
  "cortex-m-rt",
+ "critical-section",
  "embedded-hal",
  "microbit-v2",
- "panic-semihosting",
+ "panic-probe",
+ "rtt-target 0.3.1",
 ]
 
 [[package]]
@@ -234,13 +235,13 @@ dependencies = [
 ]
 
 [[package]]
-name = "panic-semihosting"
-version = "0.5.6"
+name = "panic-probe"
+version = "0.3.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c3d55dedd501dfd02514646e0af4d7016ce36bc12ae177ef52056989966a1eec"
+checksum = "4047d9235d1423d66cc97da7d07eddb54d4f154d6c13805c6d0793956f4f25b0"
 dependencies = [
  "cortex-m",
- "cortex-m-semihosting",
+ "rtt-target 0.5.0",
 ]
 
 [[package]]
@@ -266,6 +267,26 @@ name = "rand_core"
 version = "0.6.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ec0be4795e2f6a28069bec0b5ff3e2ac9bafc99e6a9a7dc3547996c5c816922c"
+
+[[package]]
+name = "rtt-target"
+version = "0.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "065d6058bb1204f51a562a67209e1817cf714759d5cf845aa45c75fa7b0b9d9b"
+dependencies = [
+ "cortex-m",
+ "ufmt-write",
+]
+
+[[package]]
+name = "rtt-target"
+version = "0.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "10b34c9e6832388e45f3c01f1bb60a016384a0a4ad80cdd7d34913bed25037f0"
+dependencies = [
+ "critical-section",
+ "ufmt-write",
+]
 
 [[package]]
 name = "rustc_version"
@@ -319,6 +340,12 @@ name = "typenum"
 version = "1.17.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "42ff0bf0c66b8238c6f3b578df37d0b7848e55df8577b3f74f92a69acceeb825"
+
+[[package]]
+name = "ufmt-write"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e87a2ed6b42ec5e28cc3b94c09982969e9227600b2e3dcbc1db927a84c06bd69"
 
 [[package]]
 name = "unicode-ident"
