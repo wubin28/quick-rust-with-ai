@@ -182,21 +182,7 @@ fn main() -> ! {
     let mut was_button_a_pressed = button_a.is_low().unwrap();
     let mut was_button_b_pressed = button_b.is_low().unwrap();
 
-    // Enable the speaker
-    board.pins.p0_02.into_push_pull_output(Level::High);
-    // Get the speaker output pin
-    let speaker_pin = board.speaker_pin.into_push_pull_output(Level::Low);
-
-    // Get P0_13 from the board and convert it to push-pull output
-    board
-        .pins
-        .p0_13
-        .into_push_pull_output(microbit::hal::gpio::Level::Low);
-
-    // Initialize the PWM (Pulse Width Modulation)
-    let mut pwm = Pwm::new(board.PWM0);
-    // Degrade the speaker pin to a general purpose pin and set it as a PWM output pin
-    pwm.set_output_pin(Channel::C0, speaker_pin.degrade());
+    let pwm = init_speaker(board);
 
     loop {
         match current_state {
@@ -243,6 +229,25 @@ fn main() -> ! {
             }
         }
     }
+}
+
+fn init_speaker(board: Board) -> Pwm<PWM0> {
+    // Enable the speaker
+    board.pins.p0_02.into_push_pull_output(Level::High);
+    // Get the speaker output pin
+    let speaker_pin = board.speaker_pin.into_push_pull_output(Level::Low);
+
+    // Get P0_13 from the board and convert it to push-pull output
+    board
+        .pins
+        .p0_13
+        .into_push_pull_output(microbit::hal::gpio::Level::Low);
+
+    // Initialize the PWM (Pulse Width Modulation)
+    let mut pwm = Pwm::new(board.PWM0);
+    // Degrade the speaker pin to a general purpose pin and set it as a PWM output pin
+    pwm.set_output_pin(Channel::C0, speaker_pin.degrade());
+    pwm
 }
 
 fn copy_pattern_to_buffer(
