@@ -8,7 +8,12 @@ use embedded_hal::blocking::delay::DelayMs;
 use embedded_hal::digital::v2::InputPin;
 use microbit::board::Board;
 use microbit::display::blocking::Display;
+use microbit::hal::gpio::Level;
+use microbit::hal::prelude::*;
+use microbit::hal::pwm::{Channel, Pwm};
+use microbit::hal::time::Hertz;
 use microbit::hal::Timer;
+use microbit::pac::{PWM0, TIMER0};
 use panic_probe as _;
 use rtt_target::rtt_init;
 
@@ -141,6 +146,14 @@ enum GameState {
     ShowingRandomPattern,
 }
 
+fn make_beep(pwm: &mut Pwm<PWM0>, timer: &mut Timer<TIMER0>) {
+    pwm.set_period(Hertz(1000));
+    pwm.set_duty_on_common(pwm.max_duty() / 2);
+    pwm.enable(Channel::C0);
+    timer.delay_ms(DURATION_100_MS);
+    pwm.disable(Channel::C0);
+}
+
 #[entry]
 fn main() -> ! {
     let mut channels = rtt_init! {
@@ -169,6 +182,22 @@ fn main() -> ! {
 
     let mut was_button_a_pressed = button_a.is_low().unwrap();
     let mut was_button_b_pressed = button_b.is_low().unwrap();
+
+    // Enable the speaker
+    board.pins.p0_02.into_push_pull_output(Level::High);
+    // Get the speaker output pin
+    let speaker_pin = board.speaker_pin.into_push_pull_output(Level::Low);
+
+    // Get P0_13 from the board and convert it to push-pull output
+    board
+        .pins
+        .p0_13
+        .into_push_pull_output(microbit::hal::gpio::Level::Low);
+
+    // Initialize the PWM (Pulse Width Modulation)
+    let mut pwm = Pwm::new(board.PWM0);
+    // Degrade the speaker pin to a general purpose pin and set it as a PWM output pin
+    pwm.set_output_pin(Channel::C0, speaker_pin.degrade());
 
     loop {
         match current_state {
@@ -201,6 +230,7 @@ fn main() -> ! {
                     }
                     let is_button_b_pressed = button_b.is_low().unwrap();
                     if is_button_b_pressed && !was_button_b_pressed {
+                        make_beep(&mut pwm, &mut timer);
                         // Print the current pattern number using RTT
                         writeln!(channel, "Current pattern: {}", current_pattern).ok();
                         current_state = GameState::ShowingSmiley;
