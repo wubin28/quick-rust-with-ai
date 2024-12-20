@@ -31,7 +31,7 @@ The chapter titles will be refined and adjusted throughout the writing process.
 
 - [Chapter 1: Lighting Up Your First LED and the Joy of Rust](./ch01/ch01.md)
 - [Chapter 2: Making Your First LED Blink and Programming Supertools](./ch02/ch02.md)
-- Chapter 3: Memory Challenge Game and Variables
+- [Chapter 3: Memory Challenge Game and Variables](./ch03/ch03.md)
 - Chapter 4: Virtual Pet Game and Ownership
 - Chapter 5: Whack-a-Mole Game and Structs
 - Chapter 6: Anti-Theft Alarm System and Error Handling
