@@ -57,6 +57,22 @@ static SMILEY: [[u8; MATRIX_DIMENSION]; MATRIX_DIMENSION] = [
     [0, 1, 1, 1, 0],
 ];
 
+static BIG_SMILEY: [[u8; 5]; 5] = [
+    [0, 1, 0, 1, 0],
+    [0, 1, 0, 1, 0],
+    [0, 0, 0, 0, 0],
+    [1, 1, 1, 1, 1],
+    [0, 1, 1, 1, 0],
+];
+
+static CRYING_SMILEY: [[u8; 5]; 5] = [
+    [0, 1, 0, 1, 0],
+    [0, 1, 0, 1, 0],
+    [0, 0, 0, 0, 0],
+    [0, 1, 1, 1, 0],
+    [1, 0, 0, 0, 1],
+];
+
 static PATTERNS: [[[u8; MATRIX_DIMENSION]; MATRIX_DIMENSION]; PATTERN_NUM] = [
     // 0 Heart shape
     [
@@ -191,6 +207,8 @@ fn main() -> ! {
     let mut was_button_a_pressed = button_a.is_low().unwrap();
     let mut was_button_b_pressed = button_b.is_low().unwrap();
 
+    let mut target_pattern: Option<usize> = None;
+
     loop {
         match current_state {
             GameState::ShowingSmiley => {
@@ -210,7 +228,8 @@ fn main() -> ! {
 
             GameState::ShowingTargetPattern => {
                 let current_pattern = rng.next_range(PATTERN_NUM);
-                writeln!(channel, "Target pattern: {}", current_pattern).ok();
+                target_pattern = Some(current_pattern);
+                writeln!(channel, "Target pattern: {}", target_pattern.unwrap()).ok();
                 copy_pattern_to_buffer(&PATTERNS[current_pattern], &mut display_buffer);
                 display.show(&mut timer, display_buffer, DURATION_1000_MS);
                 current_state = GameState::ShowingRandomPattern;
@@ -235,6 +254,13 @@ fn main() -> ! {
                         make_beep(&mut pwm, &mut timer);
                         // Print the current pattern number using RTT
                         writeln!(channel, "Current pattern: {}", current_pattern).ok();
+                        if current_pattern == target_pattern.unwrap_or(usize::MAX) {
+                            copy_pattern_to_buffer(&BIG_SMILEY, &mut display_buffer);
+                            display.show(&mut timer, display_buffer, 1000);
+                        } else {
+                            copy_pattern_to_buffer(&CRYING_SMILEY, &mut display_buffer);
+                            display.show(&mut timer, display_buffer, 1000);
+                        }
                         current_state = GameState::ShowingSmiley;
                         was_button_a_pressed = is_button_a_pressed;
                         break;
