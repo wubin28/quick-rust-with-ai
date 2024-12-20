@@ -173,7 +173,6 @@ fn main() -> ! {
     let mut current_state = GameState::ShowingSmiley;
     let button_a = board.buttons.button_a;
     let button_b = board.buttons.button_b;
-    let mut current_pattern = usize::MAX;
 
     let seed = timer.read();
     let mut rng = XorShiftRng::new(seed);
@@ -215,7 +214,7 @@ fn main() -> ! {
             }
 
             GameState::ShowingRandomPattern => {
-                current_pattern = rng.next_range(PATTERN_NUM);
+                let current_pattern = rng.next_range(PATTERN_NUM);
                 copy_pattern_to_buffer(&PATTERNS[current_pattern], &mut display_buffer);
 
                 // Split the 1000ms delay into multiple shorter delays,
