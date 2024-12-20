@@ -207,7 +207,7 @@ fn main() -> ! {
     let mut was_button_a_pressed = button_a.is_low().unwrap();
     let mut was_button_b_pressed = button_b.is_low().unwrap();
 
-    let mut target_pattern = 0;
+    let mut target_pattern: Option<usize> = None;
 
     loop {
         match current_state {
@@ -228,8 +228,8 @@ fn main() -> ! {
 
             GameState::ShowingTargetPattern => {
                 let current_pattern = rng.next_range(PATTERN_NUM);
-                target_pattern = current_pattern;
-                writeln!(channel, "Target pattern: {}", target_pattern).ok();
+                target_pattern = Some(current_pattern);
+                writeln!(channel, "Target pattern: {}", target_pattern.unwrap()).ok();
                 copy_pattern_to_buffer(&PATTERNS[current_pattern], &mut display_buffer);
                 display.show(&mut timer, display_buffer, DURATION_1000_MS);
                 current_state = GameState::ShowingRandomPattern;
@@ -254,7 +254,7 @@ fn main() -> ! {
                         make_beep(&mut pwm, &mut timer);
                         // Print the current pattern number using RTT
                         writeln!(channel, "Current pattern: {}", current_pattern).ok();
-                        if current_pattern == target_pattern {
+                        if current_pattern == target_pattern.unwrap_or(usize::MAX) {
                             copy_pattern_to_buffer(&BIG_SMILEY, &mut display_buffer);
                             display.show(&mut timer, display_buffer, 1000);
                         } else {
