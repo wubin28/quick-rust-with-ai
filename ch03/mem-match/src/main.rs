@@ -144,6 +144,7 @@ static PATTERNS: [[[u8; MATRIX_DIMENSION]; MATRIX_DIMENSION]; PATTERN_NUM] = [
 enum GameState {
     ShowingSmiley,
     ShowingRandomPattern,
+    ShowingTargetPattern,
 }
 
 fn make_beep(pwm: &mut Pwm<PWM0>, timer: &mut Timer<TIMER0>) {
@@ -199,10 +200,20 @@ fn main() -> ! {
                 if is_button_a_pressed && !was_button_a_pressed {
                     clear_buffer(&mut display_buffer);
                     display.show(&mut timer, display_buffer, DURATION_100_MS);
-                    timer.delay_ms(DURATION_1000_MS);
-                    current_state = GameState::ShowingRandomPattern;
+                    make_beep(&mut pwm, &mut timer);
+                    timer.delay_ms(DURATION_100_MS);
+                    make_beep(&mut pwm, &mut timer);
+                    current_state = GameState::ShowingTargetPattern;
                 }
                 was_button_a_pressed = is_button_a_pressed;
+            }
+
+            GameState::ShowingTargetPattern => {
+                let current_pattern = rng.next_range(PATTERN_NUM);
+                writeln!(channel, "Target pattern: {}", current_pattern).ok();
+                copy_pattern_to_buffer(&PATTERNS[current_pattern], &mut display_buffer);
+                display.show(&mut timer, display_buffer, DURATION_1000_MS);
+                current_state = GameState::ShowingRandomPattern;
             }
 
             GameState::ShowingRandomPattern => {
