@@ -169,6 +169,14 @@ fn main() -> ! {
 
     let board = Board::take().unwrap();
     let mut display = Display::new(board.display_pins);
+
+    let mut pwm = init_speaker(
+        board.pins.p0_02.into(),
+        board.speaker_pin.into(),
+        board.pins.p0_13.into(),
+        board.PWM0,
+    );
+
     let mut timer = Timer::new(board.TIMER0);
     let mut current_state = GameState::ShowingSmiley;
     let button_a = board.buttons.button_a;
@@ -181,8 +189,6 @@ fn main() -> ! {
 
     let mut was_button_a_pressed = button_a.is_low().unwrap();
     let mut was_button_b_pressed = button_b.is_low().unwrap();
-
-    let pwm = init_speaker(board);
 
     loop {
         match current_state {
@@ -231,22 +237,24 @@ fn main() -> ! {
     }
 }
 
-fn init_speaker(board: Board) -> Pwm<PWM0> {
+fn init_speaker(
+    p0_02: microbit::hal::gpio::Pin<microbit::hal::gpio::Disconnected>,
+    speaker_pin: microbit::hal::gpio::Pin<microbit::hal::gpio::Disconnected>,
+    p0_13: microbit::hal::gpio::Pin<microbit::hal::gpio::Disconnected>,
+    pwm0: PWM0,
+) -> Pwm<PWM0> {
     // Enable the speaker
-    board.pins.p0_02.into_push_pull_output(Level::High);
+    p0_02.into_push_pull_output(Level::High);
     // Get the speaker output pin
-    let speaker_pin = board.speaker_pin.into_push_pull_output(Level::Low);
+    let speaker_pin = speaker_pin.into_push_pull_output(Level::Low);
 
-    // Get P0_13 from the board and convert it to push-pull output
-    board
-        .pins
-        .p0_13
-        .into_push_pull_output(microbit::hal::gpio::Level::Low);
+    // Convert P0_13 to push-pull output
+    p0_13.into_push_pull_output(microbit::hal::gpio::Level::Low);
 
-    // Initialize the PWM (Pulse Width Modulation)
-    let mut pwm = Pwm::new(board.PWM0);
-    // Degrade the speaker pin to a general purpose pin and set it as a PWM output pin
-    pwm.set_output_pin(Channel::C0, speaker_pin.degrade());
+    // Initialize the PWM
+    let pwm = Pwm::new(pwm0);
+    // Set speaker pin as PWM output
+    pwm.set_output_pin(Channel::C0, speaker_pin);
     pwm
 }
 
