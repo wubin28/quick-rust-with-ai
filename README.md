@@ -1,25 +1,27 @@
-# Learn Rust by Games：The No-Frills Edition
+# From Rust Rookie to AI Full Stack：The No-Frills Edition
 [中文版](README_zh.md)
 
 Author: Bin Wu
 
-![image_cover.webp](./image_cover_learn_rust_by_games_3_cartoon_style.jpeg)
+![image_cover.png](./image-cover.png)
 
-**Illustration: AI-generated. A crab and a micro:bit v2 development board sit beside a green leaf showing clear signs of rust fungus infection. Graydon Hoare, Rust language's creator, named it after rust fungus. These plant pathogens have complex life cycles with multiple hosts, enhancing their survival across various environments. Similarly, Rust ensures software stability through its strict, "over-engineered" enforcement of memory safety rules.**
+**Illustration: AI-generated.**
 
 ## Introduction
 
-"Learn Rust by Games: The No-Frills Edition" is a free limited-sharing ebook released under the CC BY-NC-ND 4.0 license. The book takes a unique approach to **teaching Rust by having readers create LED games, web games, and command-line games**. Throughout the learning process, we explore common programming pitfalls and their solutions. We also show how to leverage AI tools to assist with programming, making the learning journey both practical and engaging. Our goal is to help you master Rust while having fun.
+["From Rust Rookie to AI Full Stack: The No-Frills Edition"](https://github.com/wubin28/from-rust-rookie-to-ai-full-stack) is a free e-book available under the CC BY-NC-ND 4.0 license. Through creating a series of engaging mini-games, this book helps readers quickly progress from Rust beginners to full-stack engineers who can master AI skills and solve real-world problems.
 
-This book caters to two types of beginners: those with no programming experience at all, and developers who know other programming languages but are new to Rust. After completing Chapter 1 and lighting up their first LED, readers interested in Rust embedded development can explore other specialized books on that topic. While the first part includes embedded development, our main focus is teaching the Rust programming language itself. We chose the micro:bit v2 platform for our starting point because there's something magical about controlling twinkling LEDs and cute little buttons with Rust code.
+This book takes a unique approach to **teaching the Rust programming language: it guides readers through creating various types of games, including LED games, command-line games, web games, WebAssembly games, and AI model training games**. Throughout the game development process, we will demonstrate how to progressively ask AI the right questions, leading readers through the complete journey from requirements analysis to deployment. This not only helps understand how Rust concepts solve specific problems but also teaches readers how to delegate AI-manageable details to AI.
 
-The content is divided into three parts—embedded, web, and command-line game development. Each chapter introduces specific Rust concepts through hands-on game projects. This practical approach allows readers to immediately apply what they've learned, reinforcing their understanding of Rust.
+The "Rust Rookie" in the book's title indicates that it's particularly suitable for two types of beginners: complete newcomers with no programming experience, and developers who have programming experience but haven't worked with Rust before. For programmers interested in learning Rust embedded development, they can transition to other specialized Rust embedded development books after completing the first chapter and lighting up their first LED. While the first part of this book involves Rust embedded development, the overall focus remains on the Rust programming language itself. We chose to start with micro:bit v2 embedded development because controlling twinkling LEDs and cute little buttons with Rust code is simply irresistible.
 
-What sets this book apart from other Rust programming guides is its focus on three key principles for beginners:
+This book divides Rust fundamentals into five parts, focusing on embedded systems, command line, Web, WebAssembly, and AI model training game development. Each chapter carefully incorporates games designed around specific Rust concepts. This organizational approach offers a significant advantage: readers can grow rapidly into AI full-stack engineers through hands-on practice with Rust projects across 5 different domains.
 
-- **Learn and apply immediately**: Experience quick wins that boost confidence and motivation
-- **Make benefits visible**: See the practical value of each new concept and tool
-- **Ask AI good questions**: Learn effective techniques for getting helpful AI responses
+Compared to other Rust programming introductory books, this book offers the following unique features to create an exceptional learning experience for Rust beginners:
+
+- **Learn and Apply Immediately**: Allowing beginners to experience a sense of achievement quickly during the learning process
+- **Problem-Solving First**: Every new concept and tool corresponds to specific problems, helping you understand their practical applications
+- **Ask AI Good Questions**: Providing effective questioning techniques to improve AI response accuracy
 
 **If you like this ebook, please give it a star⭐️!**
 
@@ -29,42 +31,47 @@ The chapter titles will be refined and adjusted throughout the writing process.
 
 ### Part One: Lighting Up LEDs
 
-- [Chapter 1: Lighting Up Your First LED and the Joy of Rust](./ch01/ch01.md)
-- [Chapter 2: Making Your First LED Blink and Programming Supertools](./ch02/ch02.md)
+- [Chapter 1: Lighting Your First LED and the Joy of Rust](./ch01/ch01.md)
+- [Chapter 2: Making Your First LED Blink and Programming Tools](./ch02/ch02.md)
 - [Chapter 3: Memory Challenge Game and Variables](./ch03/ch03.md)
 - Chapter 4: Virtual Pet Game and Ownership
-- Chapter 5: Whack-a-Mole Game and Structs
-- Chapter 6: Anti-Theft Alarm System and Error Handling
-- Chapter 7: Reaction Test Game and Lifetimes
-- Chapter 8: LED Text Scrolling Display and Automated Testing
-- Chapter 9: Snake Game and Unsafe Rust
+- Chapter 5: Whack-a-Mole Game and Structures
 
-### Part Two: Building Multi-threaded Web Games
+### Part Two: Creating Fun Command Line Games
 
-- Chapter 10: Online Tic-Tac-Toe Game and Cargo
-- Chapter 11: Multi-User Chat Room and Packages, Crates, and Modules
+- Chapter 6: Endless Tic-Tac-Toe and Error Handling
+- Chapter 7: Typing Speed Test Game and Lifetimes
+- Chapter 8: Maze Generation and Automated Testing
+- Chapter 9: Task Management Simulation Game and Cargo
+- Chapter 10: Publishing a Text Adventure Game to [crates.io](http://crates.io) and Sharing the Joy
+
+### Part Three: Building Multi-threaded Web Games
+
+- Chapter 11: Multiplayer Chat Room and Packages, Crates, and Modules
 - Chapter 12: Customizable Card Battle Game and Generics
-- Chapter 13: Online Multiplayer Werewolf Game and Traits
+- Chapter 13: Online Multiplayer Werewolf and Traits
 - Chapter 14: Collaborative Puzzle Game and Smart Pointers
 - Chapter 15: Real-time Leaderboard and Concurrency
-- Chapter 16: Real-time Strategy Game Server and Asynchronous Programming
+- Chapter 16: Real-time Multiplayer Shooter and Unsafe Rust
+- Chapter 17: Real-time Strategy Game Server and Asynchronous Programming
 
-### Part Three: Creating Fun Command-Line Games
+### Part Four: Creating Fun WebAssembly Games
 
-- Chapter 17: Sudoku Game and Common Collection Types
-- Chapter 18: Text Adventure Game and Enums
-- Chapter 19: Riddle Guessing Game and Pattern Matching
-- Chapter 20: Word Frequency Counter and Iterators
-- Chapter 21: Custom Calculator and Closures
-- Chapter 22: Command-Line Mini Game Engine and Macros
-- Chapter 23: Role-Playing Game and Object-Oriented Programming
-- Chapter 24: Multi-functional Command-Line Tool and Advanced Types
-- Chapter 25: Publishing Games to [crates.io](http://crates.io) and Sharing the Joy
-- Appendix
+- Chapter 18: Tetris and Common Collection Types
+- Chapter 19: Board Games and Enums
+- Chapter 20: Event-Driven Games and Pattern Matching
+- Chapter 21: Virtual Pet Simulator and Object-Oriented Programming
+
+### Part Five: Igniting AI Model Training
+
+- Chapter 22: Data Loading and Iterators
+- Chapter 23: Building Neural Networks and Closures
+- Chapter 24: Automated Model Training and Macros
+- Chapter 25: AI Model Encapsulation and Advanced Types
 
 ## Copyright License Agreement
 
-["Learn Rust by Games: The No-Frills Edition"](https://github.com/wubin28/learn_rust_by_games) © 2024 by Author [Bin Wu](https://github.com/wubin28) is licensed under [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1).
+["From Rust Rookie to AI Full Stack: The No-Frills Edition"](https://github.com/wubin28/from-rust-rookie-to-ai-full-stack) © 2025 by [Wu Zhenben](https://github.com/wubin28) is licensed under [CC BY-NC-ND 4.0](https://creativecommons.org/licenses/by-nc-nd/4.0/?ref=chooser-v1).
 
 This book is licensed under the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License (CC BY-NC-ND 4.0).
 
@@ -84,7 +91,7 @@ In essence, CC BY-NC-ND 4.0 is a relatively strict license. It allows free shari
 
 ## Book Code
 
-You can download the code for this book from the GitHub repository at [https://github.com/wubin28/learn-rust-by-games](https://github.com/wubin28/learn-rust-by-games). Each code listing includes its specific location in the repository, making it easy for readers to find and run. The repository is organized by chapters, using the format chxx (where xx represents the chapter number).
+The code for this book can be downloaded from the GitHub repository at https://github.com/wubin28/from-rust-rookie-to-ai-full-stack. Each code listing is marked with its specific location in the repository for easy reference and execution. The repository is organized by chapters in the format chxx (where xx is the chapter number).
 
 ## Development Environment Setup
 
@@ -103,11 +110,13 @@ Note: This book won't cover the setup of Linux in WSL2 on Windows 10/11 as it ca
 
 Throughout this book, we use specific icons to highlight different types of information:
 
-- ✅ Key actions and their concrete benefits
-- ⚠️ Common pitfalls and how to avoid them
-- 🔎 Optional deep dives for advanced understanding
-- 🧠 Practice exercises and AI prompting techniques
-- 💡 Solution hints and tips
+- ❓ Asking AI Good Questions
+- 💡 Key Points from AI Responses
+- 👍 How Rust Concepts Solve Specific Problems
+- 🤖 Rust Concept Details That Can Be Handled by AI Without Memorization
+- ✅ Actions and Benefits
+- ⚠️ Important Pitfalls to Watch Out For and How to Avoid Them
+- 🔎 Deep Dive Topics — Optional but Knowledge-Expanding
 
 ## Acknowledgements
 
@@ -119,15 +128,15 @@ I'm also thankful to the online friend "Don't Hit Xiao Lan" for their valuable i
 
 ### 1. Is this book suitable for programming beginners?
 
-This book is ideal for two types of beginners: those with no programming experience whatsoever, and those  know other programming languages but are new to Rust. 
+This book is especially suitable for two types of beginners: those who are completely new to programming, and those who have programming experience but haven't worked with Rust or embedded development before.
 
 ### 2. How does this book differ from other Rust learning resources?
 
-We take a unique approach by teaching Rust concepts through the creation of engaging games, with a focus on embedded systems in Part One. Additionally, we explore common errors and pitfalls in learning Rust, helping readers gain a deeper understanding of the language's features and best practices.
+This book takes a unique approach by teaching Rust concepts through creating colorful games (especially embedded games in Part 1). Additionally, it explores how to effectively summon AI as your personal Rust tutor to help readers gain a deeper understanding of Rust's features and best practices.
 
 ### 3. Is this book complete?
 
-The book is a work in progress, with an expected completion date around the end of July 2025. We regularly add and update chapters, so please check back often for the latest content.
+This book is currently being written and is expected to be completed around the end of 2025. We regularly add and update chapters. Please check back frequently for the latest content and updates.
 
 ### 4. How can I contribute to this book?
 
@@ -135,12 +144,12 @@ We welcome contributions of all kinds! If you spot errors, have ideas for improv
 
 ### 5. Why is this a "No-Frills Edition"?
 
-This edition is a precursor to a more comprehensive version planned for publication. We're sharing this limited version to gather reader feedback and refine the content. While this edition covers the core aspects of software project development for beginners, the published version will include additional content such as tips for using generative AI, common Rust learning pitfalls, and strategies to avoid them.
+This book is planned to be published through a publishing house. During the creative process, we are using a limited-sharing simplified version to gather reader feedback and improve the content. The publisher's version will contain more comprehensive content. The main difference between the two versions is: the simplified version provides core essentials of the complete software development process for beginners; while the publisher's version adds value by including additional content such as how to ask AI good questions and key points from AI responses, how Rust concepts solve specific problems, and which Rust concept details can be handled by AI without the need for rote memorization.
 
 ### 6. Is this book available in other languages?
 
-Currently, we're writing the book in English and Chinese. If you're interested in translating it into other languages, please contact the author by opening an issue on our GitHub repository.
+Currently, we're writing the book in Chinese. If you're interested in translating it into other languages, please contact the author by opening an issue on our GitHub repository.
 
 ---
 
-Thank you for your interest in "Learn Rust by Games: The No-Frills Edition"! We hope this book becomes a valuable resource on your Rust learning journey. Remember, the more pitfalls you encounter—and overcome—while writing games to learn Rust, the faster you'll progress. After all, those "pitfalls" often turn out to be our best teachers!
+Thank you for your interest in ["From Rust Rookie to AI Full Stack: The No-Frills Edition"](https://github.com/wubin28/from-rust-rookie-to-ai-full-stack)! I hope this book becomes a valuable companion on your Rust learning journey. Remember, with the skills to ask AI the right questions and your curiosity, you can quickly grow from a Rust beginner into an AI full-stack engineer.
