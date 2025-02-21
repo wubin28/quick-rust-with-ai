@@ -34,9 +34,8 @@
 **克隆仓库**
 
 ```
-git clone https://github.com/your-github-username/quick-rust-with-ai.git
+git clone https://gitee.com/wubin28/quick-rust-with-ai.git
 cd quick-rust-with-ai
-
 ```
 
 **安装Rust（如果尚未安装）**
