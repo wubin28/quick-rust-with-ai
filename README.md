@@ -18,7 +18,7 @@ Quick Rust with AI is a hands-on guide to Rust programming that focuses on real-
 
 ## **📂 Repository Structure**
 
-Each chapter has its own directory with corresponding code samples and exercises. The structure is organized as follows:
+Each chapter has its own directory with corresponding project code samples. The structure is organized as follows:
 
 ```
 /ch01
