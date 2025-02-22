@@ -34,7 +34,7 @@ Each chapter has its own directory with corresponding project code samples. The 
 **Clone the repository**
 
 ```
-git clone https://gitee.com/wubin28/quick-rust-with-ai.git
+git clone https://github.com/wubin28/quick-rust-with-ai.git
 cd quick-rust-with-ai
 ```
 
